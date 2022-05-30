@@ -1,0 +1,78 @@
+
+create table privincia(
+id int AUTO_INCREMENT,
+nom varchar(30),
+primary key(id)
+);
+
+create table poblacio(
+id int AUTO_INCREMENT,
+control varchar(1),
+nom varchar(30),
+id_provincia int,
+primary key(id),
+FOREIGN KEY (id_provincia) REFERENCES privincia(id)
+);
+
+create table festius(
+id int AUTO_INCREMENT,
+data_ini date,
+data_fi date,
+descripcio varchar(60),
+primary key(id)
+);
+
+create table servei(
+id int not null,
+nom varchar(100),
+detall varchar(200),
+preu decimal(8,2),
+primary key(id)
+);
+
+create table client (
+  nif varchar(9) primary key,
+  dataregistre TIMESTAMP,
+  nom varchar(20),
+  cognom_1 varchar(30),
+  cognom_2 varchar(30),
+  address varchar(60),
+  id_poblacio int,
+  telefon int,
+  email varchar(30),
+  datanaixement DATE,
+  FOREIGN KEY (id_poblacio) REFERENCES poblacio(id)
+);
+
+create table detall(
+id BIGINT,
+nif varchar(9),
+id_servei int,
+FOREIGN KEY (nif) REFERENCES client(nif),
+FOREIGN KEY (id_servei) REFERENCES servei(id)
+);
+
+
+
+create table historial(
+
+id BIGINT,
+nif varchar(9),
+data timestamp,
+motiu varchar(140),
+id_servei int,
+preu DECIMAL(8,2),
+FOREIGN KEY (nif) REFERENCES client(nif),
+FOREIGN KEY (id_servei) REFERENCES servei(id)
+);
+
+create table reserves (
+id int not null,
+nif varchar(9),
+date DATE,
+hora TIME,
+motiu varchar(140),
+datares date
+
+);
+
