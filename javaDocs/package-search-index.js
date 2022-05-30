@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"cat.institutmvm.applicacio","l":"cat.institutmvm.applicacio.entities"},{"m":"cat.institutmvm.applicacio","l":"cat.institutmvm.applicacio.ui"},{"m":"com.institutmvm.controller","l":"com.institutmvm.controller.ui"}];updateSearchResults();
